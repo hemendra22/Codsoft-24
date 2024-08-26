@@ -1,0 +1,83 @@
+#include<iostream>
+using namespace std;
+class cal{
+    public:
+    int a,b,c;
+    char op;
+    
+    void getv1();
+    void getv2();
+    void getop();
+    void sum();
+    void sub();
+    void mul();
+    void divi();
+}ob;
+
+int main() {
+    // Write C++ code here
+    //cout << "Try programiz.pro";
+        ob.getv1();
+        while (true) {
+                ob.getop();
+                if (ob.op == '=') {
+                        cout<<"\n Final Answer : "<<ob.a;
+                        break;
+                }
+                ob.getv2();
+                if (ob.op == '+') {
+                        ob.sum();
+                } else if (ob.op == '-') {
+                        ob.sub();
+                } else if (ob.op == '*') {
+                        ob.mul();
+                } else if (ob.op == '/') {
+                        ob.divi();
+                } else {
+                        cout << "Invalid operator!" << endl;
+                }
+        }
+        return 0;
+}
+void cal::getv1(){
+    cout<<"Enter the value1 : ";
+    cin>>a;
+}
+void cal::getv2(){
+    cout<<"Enter the value2 : ";
+    cin>>b;
+}
+void cal::getop(){
+    cout<<"Enter operator : ";
+    cin>>op;
+}
+void cal::sum(){
+        c=a+b;
+        cout<<a<<"+"<<b<<"="<<c<<endl;
+        a=c;
+        b=0;
+}
+void cal::sub(){
+        c=a-b;
+        cout<<a<<"-"<<b<<"="<<c<<endl;
+        a=c;
+        b=0;
+}
+void cal::mul(){
+        c=a*b;
+        cout<<a<<"*"<<b<<"="<<c<<endl;
+        a=c;
+        b=0;
+}
+void cal::divi(){
+        if(b==0){
+                cout <<"Divide is not possible";
+        }
+        else{
+                
+        c=a/b;
+        cout<<a<<"/"<<b<<"="<<c<<endl;
+        a=c;
+        b=0;
+        }
+}
